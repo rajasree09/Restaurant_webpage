@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>China Town Restaurant</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo" id="logo"><i class="fa-solid fa-bowl-food"></i> China Town</a>
+      <nav class="navbar" id="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order Online</a>
+        <a href="#dinein">Dine-In</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Welcome to China Town</h1>
+      <p>Authentic Chinese flavors made with love and tradition. Experience dining, takeaways, and online orders in one place.</p>
+      <div class="hero-buttons">
+        <button class="btn" onclick="scrollToSection('#dinein')">Book a Table</button>
+        <button class="btn outline" onclick="scrollToSection('#order')">Order Now</button>
+      </div>
+    </div>
+    <div class="hero-image" data-aos="fade-left">
+      <img src="https://media.admiddleeast.com/photos/6513fa1171d41ee96603f876/16:9/w_8688,h_4887,c_limit/MEI_LI_01.jpg" alt="Restaurant Banner">
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section id="menu" class="menu-section">
+    <h2 data-aos="fade-up">Our Menu</h2>
+    <div class="menu-grid" data-aos="fade-up">
+      <div class="menu-card">
+        <img src="https://www.foodfusion.com/wp-content/uploads/2018/03/2-1.jpg" alt="Starters">
+        <div class="card-info">
+          <h3>Starters</h3>
+          <p>Crispy rolls, spicy bites, and flavorful appetizers.</p>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://thecookiewriter.com/wp-content/uploads/2023/08/31-scallops-recipes-fb.jpg" alt="Main Course">
+        <div class="card-info">
+          <h3>Main Course</h3>
+          <p>Traditional Chinese delights with a modern twist.</p>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://cdn.hswstatic.com/gif/desserts-update.jpg" alt="Desserts">
+        <div class="card-info">
+          <h3>Desserts</h3>
+          <p>Sweet endings that melt your heart.</p>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://etilicos.com/wp-content/uploads/2013/01/cocktails3-1024x641.jpg" alt="Drinks">
+        <div class="card-info">
+          <h3>Drinks</h3>
+          <p>Refreshing and energizing beverages for every mood.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORDER ONLINE ===== -->
+  <section id="order" class="order-section">
+    <h2 data-aos="fade-up">Order Online</h2>
+
+    <div class="order-container">
+      <div class="order-menu">
+        <div class="tabs">
+          <button class="tab active" data-cat="starters">Starters</button>
+          <button class="tab" data-cat="maincourse">Main Course</button>
+          <button class="tab" data-cat="desserts">Desserts</button>
+          <button class="tab" data-cat="drinks">Drinks</button>
+        </div>
+        <div id="menu-items" class="menu-items"></div>
+      </div>
+
+      <aside id="cart" class="cart-visible">
+        <h3>Your Cart</h3>
+        <div id="cart-list" class="cart-list"></div>
+        <div class="cart-footer">
+          <p>Total: ₹<span id="cart-total">0</span></p>
+          <button id="order-now" class="btn">Place Order</button>
+          <button id="clear-cart" class="btn outline">Clear Cart</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== DINE-IN ===== -->
+  <section id="dinein" class="dinein-section">
+    <h2 data-aos="fade-up">Dine-In</h2>
+    <div class="dinein-cards">
+      <div class="dine-card" data-aos="fade-right">
+        <h3>Book a Table</h3>
+        <form id="book-table-form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="tel" placeholder="Phone Number" required>
+          <input type="email" placeholder="Email (optional)">
+          <input type="date" required>
+          <input type="time" required>
+          <input type="number" placeholder="No. of People" required>
+          <textarea placeholder="Special Requests"></textarea>
+          <button class="btn" type="submit">Book Table</button>
+        </form>
+      </div>
+
+      <div class="dine-card" data-aos="fade-left">
+        <h3>Organize a Party</h3>
+        <form id="party-form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="tel" placeholder="Phone Number" required>
+          <select required>
+            <option value="">Occasion</option>
+            <option>Birthday</option>
+            <option>Marriage Day</option>
+            <option>Meeting</option>
+            <option>Get Together</option>
+          </select>
+          <input type="date" required>
+          <input type="number" placeholder="Number of Guests" required>
+          <textarea placeholder="Additional Details"></textarea>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="gallery-section">
+    <h2 data-aos="fade-up">Gallery</h2>
+    <div class="gallery-grid" data-aos="fade-up">
+      <img src="https://static.toiimg.com/photo/57535757.cms" alt="Dish">
+      <img src="https://www.touchbistro.com/wp-content/uploads/2021/08/restaurant-interior-design-ideas-thumbnail.jpg" alt="Interior">
+      <img src="https://d1pbny5bq445o3.cloudfront.net/get/wp-content/uploads/2023/10/04104450/Restaurant-event-ideas.png" alt="Event">
+      <img src="https://www.shutterstock.com/image-photo/hotel-manager-teach-restaurant-team-260nw-2569903725.jpg" alt="Staff">
+    </div>
+  </section>
+
+  <!-- ===== ABOUT US ===== -->
+  <section id="about" class="about-section">
+    <div class="about-text" data-aos="fade-right">
+      <h2>About Us</h2>
+      <p>At China Town, we believe in serving happiness with every dish. Our chefs combine authentic flavors with premium ingredients to create unforgettable meals. We take pride in our warm service, hygiene, and consistency.</p>
+      <p>Whether you're dining in or hosting an event, our mission is to make every moment special for our guests.</p>
+      <p>Free delivery, easy payments, and 24/7 availability make us your go-to destination for Chinese cuisine.</p>
+    </div>
+    <div class="about-image" data-aos="fade-left">
+      <img src="https://static.designmynight.com/uploads/2024/01/opium.jpg" alt="About China Town">
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact" class="footer">
+    <p><i class="fa-solid fa-phone"></i> +91 9963015780 | <i class="fa-solid fa-envelope"></i> makamrajasree@gmail.com</p>
+    <p>China, Beijing | <a href="#">Facebook</a> <a href="#">Instagram</a> <a href="#">Twitter</a></p>
+    <p>© 2025 China Town</p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
